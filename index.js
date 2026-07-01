@@ -16,6 +16,15 @@ app.get("/contact-us",(req,res) => {
     res.send("Contact Page")
 })
 
+app.get("/users",(req,res) => {
+    res.json(
+        {
+            "name":"Fasliya",
+            "age":25,
+        }
+    )
+})
+
 app.listen(PORT,()=> {
     console.log("Server Running...");
 })
