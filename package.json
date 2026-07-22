@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Subinfasliya/nodejs-express#readme",
   "dependencies": {
-    "express": "^5.2.1"
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.8.0"
   }
 }
