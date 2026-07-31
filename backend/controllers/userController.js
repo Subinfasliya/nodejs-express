@@ -40,7 +40,7 @@ const userLoggin = async (req, res, next) => {
       });
     }
 
-    const token = signToken({
+    const token = await signToken({
       id: user._id,
       email: user.email,
     });
@@ -95,11 +95,13 @@ const userRegister = async (req, res, next) => {
 
 
 const userProfile = async(req,res,next) => {
+
   try{
      
     res.status(200).json({
       success:true,
-      message:"Profile"
+      message:"Profile",
+      data:req.user
     })
   } catch(error){
     next(error)
