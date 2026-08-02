@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const User = require("../models/userModel");
-const signToken = require("../utils/jwt");
+const {signToken} = require("../utils/jwt");
 
 const isMongoDBReady = () => mongoose.connection.readyState === 1;
 
@@ -40,7 +40,7 @@ const userLoggin = async (req, res, next) => {
       });
     }
 
-    const token = await signToken({
+    const token =  signToken({
       id: user._id,
       email: user.email,
     });
